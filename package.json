@@ -1,0 +1,43 @@
+{
+  "name": "xcavate",
+  "version": "0.0.0",
+  "description": "Extract real symbol.",
+  "main": "xcavate.js",
+  "support": "xcavate.support.js",
+  "deploy": "xcavate.deploy.js",
+  "browser": "xcavate.deploy.js",
+  "scripts": {
+    "build": "babel xcavate.js --out-file xcavate.support.js --source-maps && webpack --progress --display-modules",
+    "test": "mocha xcavate-test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/volkovasystems/xcavate.git"
+  },
+  "keywords": [
+    "extract",
+    "real",
+    "symbol",
+    "xcavate"
+  ],
+  "author": "Richeve S. Bebedor <richeve.bebedor@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/volkovasystems/xcavate/issues"
+  },
+  "homepage": "https://github.com/volkovasystems/xcavate#readme",
+  "dependencies": {
+    "babel-runtime": "^6.23.0",
+    "falzy": "^0.19.0",
+    "mtch": "^0.1.0",
+    "protype": "^0.21.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-core": "^6.24.1",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-preset-latest": "^6.24.1",
+    "source-map-loader": "^0.2.1",
+    "webpack": "^2.6.1"
+  }
+}
