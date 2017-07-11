@@ -36,7 +36,8 @@
 			"author": "Richeve S. Bebedor",
 			"eMail": "richeve.bebedor@gmail.com",
 			"contributors": [
-				"John Lenon Maghanoy <johnlenonmaghanoy@gmail.com>"
+				"John Lenon Maghanoy <johnlenonmaghanoy@gmail.com>",
+				"Vinse Vinalon <vinsevinalon@gmail.com>"
 			],
 			"repository": "https://github.com/volkovasystems/xcavate.git",
 			"test": "xcavate-test.js",
@@ -88,7 +89,7 @@ const xcavate = function xcavate( symbol, entity ){
 		throw new Error( "invalid entity" );
 	}
 
-	if( !protype( symbol, SYMBOL ) ){
+	if( typeof symbol != SYMBOL ){
 		symbol = Symbol( symbol );
 	}
 
