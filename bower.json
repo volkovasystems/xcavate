@@ -1,32 +1,32 @@
 {
-  "name": "xcavate",
-  "version": "0.2.0",
-  "description": "Extract real symbol.",
-  "main": "xcavate.deploy.js",
-  "support": "xcavate.support.js",
-  "authors": [
-    "Richeve S. Bebedor <richeve.bebedor@gmail.com>",
-    "John Lenon Maghanoy <johnlenonmaghanoy@gmail.com>",
-    "Vinse Vinalon <vinsevinalon@gmail.com>"
-  ],
-  "license": "MIT",
-  "keywords": [
-    "extract",
-    "real",
-    "symbol",
-    "xcavate"
-  ],
-  "homepage": "https://github.com/volkovasystems/xcavate",
-  "ignore": [
-    "**/.*",
-    "node_modules",
-    "bower_components",
-    "test",
-    "tests"
-  ],
-  "dependencies": {
-    "falzy": "^0.20.0",
-    "mtch": "^0.4.0",
-    "protype": "^0.22.0"
-  }
+	"name": "xcavate",
+	"version": "0.3.0",
+	"description": "Extract real symbol.",
+	"main": "xcavate.deploy.js",
+	"support": "xcavate.support.js",
+	"authors": [
+		"Richeve S. Bebedor <richeve.bebedor@gmail.com>",
+		"John Lenon Maghanoy <johnlenonmaghanoy@gmail.com>",
+		"Vinse Vinalon <vinsevinalon@gmail.com>"
+	],
+	"license": "MIT",
+	"keywords": [
+		"extract",
+		"real",
+		"symbol",
+		"xcavate"
+	],
+	"homepage": "https://github.com/volkovasystems/xcavate",
+	"ignore": [
+		"**/.*",
+		"node_modules",
+		"bower_components",
+		"test",
+		"tests"
+	],
+	"dependencies": {
+		"falzy": "^0.23.0",
+		"mtch": "^0.6.0",
+		"protype": "^0.23.0"
+	}
 }
