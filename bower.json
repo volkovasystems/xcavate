@@ -1,6 +1,6 @@
 {
 	"name": "xcavate",
-	"version": "0.3.0",
+	"version": "0.4.0",
 	"description": "Extract real symbol.",
 	"main": "xcavate.deploy.js",
 	"support": "xcavate.support.js",
@@ -27,6 +27,6 @@
 	"dependencies": {
 		"falzy": "^0.23.0",
 		"mtch": "^0.6.0",
-		"protype": "^0.23.0"
+		"protype": "^0.24.0"
 	}
 }
