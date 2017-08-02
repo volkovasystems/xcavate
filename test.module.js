@@ -135,19 +135,20 @@ describe( "xcavate", ( ) => {
 	describe( `"xcavate( 'hello', { } )"`, ( ) => {
 
 		it( "should be equal to Symbol( 'hello' )", ( ) => {
-
+			//: @ignore:
 			let result = browser.url( bridgeURL ).execute(
 
 				function( ){
 					let symbol = Symbol( "hello" );
 					let data = { };
 					data[ symbol ] = symbol;
-					return xcavate( "hello", data );
+					return xcavate( "hello", data ).toString( );
 				}
 
 			).value;
+			//: @end-ignore
 
-			assert.equal( result, Symbol( "hello" ) );
+			assert.equal( result, "Symbol(hello)" );
 
 		} );
 
@@ -155,22 +156,24 @@ describe( "xcavate", ( ) => {
 
 
 	describe( `"xcavate( Symbol( 'hello' ), data )"`, ( ) => {
-		it( "should be equal to Symbol( 'hello' )", ( ) => {
 
+		it( "should be equal to Symbol( 'hello' )", ( ) => {
+			//: @ignore:
 			let result = browser.url( bridgeURL ).execute(
 
 				function( ){
 					let symbol = Symbol( "hello" );
 					let data = { };
 					data[ symbol ] = symbol;
-					return xcavate( Symbol( "hello" ), data );
+					return xcavate( Symbol( "hello" ), data ).toString( );
 				}
 
 			).value;
-
-			assert.equal( result, Symbol( "hello" ) );
+			//: @end-ignore
+			assert.equal( result, "Symbol(hello)" );
 
 		} );
+
 	} );
 
 } );
