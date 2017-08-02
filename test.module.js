@@ -72,7 +72,7 @@ const path = require( "path" );
 //: @server:
 
 describe( "xcavate", ( ) => {
-	
+
 	describe( `"xcavate( "hello", data )"`, ( ) => {
 
 		describe( `"xcavate( Symbol( "hello" ), data "`, ( ) => {
@@ -98,10 +98,10 @@ describe( "xcavate", ( ) => {
 //: @end-server
 
 
-//: @client: 
+//: @client:
 
 describe( "xcavate", ( ) => {
-	
+
 	describe( `"xcavate( "hello", data )"`, ( ) => {
 
 		describe( `"xcavate( Symbol( "hello" ), data "`, ( ) => {
@@ -130,51 +130,49 @@ describe( "xcavate", ( ) => {
 
 describe( "xcavate", ( ) => {
 
-	
-	let directory = __dirname;
-	let testBridge = path.resolve( directory, "bridge.html" );
-	let bridgeURL = `file://${ testBridge }`;
+	let bridgeURL = `file://${ path.resolve( __dirname, "bridge.html" ) }`;
 
-	describe( `"xcavate( "hello", data )"`, ( ) => {
+	describe( `"xcavate( 'hello', { } )"`, ( ) => {
 
-		describe( `"xcavate( Symbol( "hello" ), data "`, ( ) => {
-			let symbol = Symbol( "hello" );
-			let data = { };
-			data[ symbol ] = symbol;
+		it( "should be equal to Symbol( 'hello' )", ( ) => {
 
-			it( "should be equal to Symbol( 'hello' )", ( ) => {
+			let result = browser.url( bridgeURL ).execute(
 
-			assert.equal(xcavate ( true, true ) );
+				function( ){
+					let symbol = Symbol( "hello" );
+					let data = { };
+					data[ symbol ] = symbol;
+					return xcavate( "hello", data );
+				}
 
-			} );
-			it( "should be equal to Symbol( 'hello' )", ( ) => {
+			).value;
 
-			assert.equal(xcavate ( true, true ) );
+			assert.equal( result, Symbol( "hello" ) );
 
-			} );
 		} );
+
 	} );
 
 
-	
+	describe( `"xcavate( Symbol( 'hello' ), data )"`, ( ) => {
+		it( "should be equal to Symbol( 'hello' )", ( ) => {
+
+			let result = browser.url( bridgeURL ).execute(
+
+				function( ){
+					let symbol = Symbol( "hello" );
+					let data = { };
+					data[ symbol ] = symbol;
+					return xcavate( Symbol( "hello" ), data );
+				}
+
+			).value;
+
+			assert.equal( result, Symbol( "hello" ) );
+
+		} );
+	} );
+
 } );
 
 //: @end-bridge
-
-
-
-
-
-
-// const assert = require( "assert" );
-// const xcavate = require( "./xcavate.js" );
-
-// let symbol = Symbol( "hello" );
-// let data = { };
-// data[ symbol ] = symbol;
-
-// assert.equal( xcavate( "hello", data ), symbol, "should be equal to Symbol( 'hello' )" );
-
-// assert.equal( xcavate( Symbol( "hello" ), data ), symbol, "should be equal to Symbol( 'hello' )" );
-
-// console.log( "ok" );
