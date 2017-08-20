@@ -5,15 +5,15 @@
     "passes": 2,
     "pending": 0,
     "failures": 0,
-    "start": "2017-07-31T12:57:40.459Z",
-    "end": "2017-07-31T12:57:40.466Z",
+    "start": "2017-08-18T02:41:50.284Z",
+    "end": "2017-08-18T02:41:50.291Z",
     "duration": 7
   },
   "tests": [
     {
       "title": "should be equal to Symbol( 'hello' )",
       "fullTitle": "xcavate \"xcavate( \"hello\", data )\" \"xcavate( Symbol( \"hello\" ), data \" should be equal to Symbol( 'hello' )",
-      "duration": 2,
+      "duration": 1,
       "currentRetry": 0,
       "err": {}
     },
@@ -31,7 +31,7 @@
     {
       "title": "should be equal to Symbol( 'hello' )",
       "fullTitle": "xcavate \"xcavate( \"hello\", data )\" \"xcavate( Symbol( \"hello\" ), data \" should be equal to Symbol( 'hello' )",
-      "duration": 2,
+      "duration": 1,
       "currentRetry": 0,
       "err": {}
     },
