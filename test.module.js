@@ -71,13 +71,66 @@ const path = require( "path" );
 
 //: @server:
 
+describe( "xcavate", ( ) => {
 
+	describe( "`xcavate( 'hello', { [ Symbol( 'hello' ) ]: Symbol( 'hello' ) } )`", ( ) => {
+		it( "should be equal to Symbol( 'hello' )", ( ) => {
+
+			let symbol = Symbol( "hello" );
+			let data = { };
+			data[ symbol ] = symbol;
+
+			assert.equal( xcavate( "hello", data ), symbol );
+
+		} );
+	} );
+
+	describe( "`xcavate( Symbol( 'hello' ), { [ Symbol( 'hello' ) ]: Symbol( 'hello' ) } )`", ( ) => {
+		it( "should be equal to Symbol( 'hello' )", ( ) => {
+
+			let symbol = Symbol( "hello" );
+			let data = { };
+			data[ symbol ] = symbol;
+
+			assert.equal( xcavate( Symbol( "hello" ), data ), symbol );
+
+		} );
+	} );
+
+} );
 
 //: @end-server
 
 
 //: @client:
 
+describe( "xcavate", ( ) => {
+
+	describe( "`xcavate( 'hello', { [ Symbol( 'hello' ) ]: Symbol( 'hello' ) } )`", ( ) => {
+		it( "should be equal to Symbol( 'hello' )", ( ) => {
+
+			let symbol = Symbol( "hello" );
+			let data = { };
+			data[ symbol ] = symbol;
+
+			assert.equal( xcavate( "hello", data ), symbol );
+
+		} );
+	} );
+
+	describe( "`xcavate( Symbol( 'hello' ), { [ Symbol( 'hello' ) ]: Symbol( 'hello' ) } )`", ( ) => {
+		it( "should be equal to Symbol( 'hello' )", ( ) => {
+
+			let symbol = Symbol( "hello" );
+			let data = { };
+			data[ symbol ] = symbol;
+
+			assert.equal( xcavate( Symbol( "hello" ), data ), symbol );
+
+		} );
+	} );
+
+} );
 
 
 //: @end-client
@@ -89,7 +142,7 @@ describe( "xcavate", ( ) => {
 
 	let bridgeURL = `file://${ path.resolve( __dirname, "bridge.html" ) }`;
 
-	describe( "`xcavate( 'hello', { } )`", ( ) => {
+	describe( "`xcavate( 'hello', { [ Symbol( 'hello' ) ]: Symbol( 'hello' ) } )`", ( ) => {
 		it( "should be equal to Symbol( 'hello' )", ( ) => {
 			//: @ignore:
 			let result = browser.url( bridgeURL ).execute(
@@ -99,6 +152,26 @@ describe( "xcavate", ( ) => {
 					let data = { };
 					data[ symbol ] = symbol;
 					return xcavate( "hello", data ).toString( );
+				}
+
+			).value;
+			//: @end-ignore
+
+			assert.equal( result, "Symbol(hello)" );
+
+		} );
+	} );
+
+	describe( "`xcavate( Symbol( 'hello' ), { [ Symbol( 'hello' ) ]: Symbol( 'hello' ) } )`", ( ) => {
+		it( "should be equal to Symbol( 'hello' )", ( ) => {
+			//: @ignore:
+			let result = browser.url( bridgeURL ).execute(
+
+				function( ){
+					let symbol = Symbol( "hello" );
+					let data = { };
+					data[ symbol ] = symbol;
+					return xcavate( Symbol( "hello" ), { [ Symbol( "hello" ) ]: Symbol( "hello" ) } ).toString( );
 				}
 
 			).value;
