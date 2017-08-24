@@ -71,28 +71,6 @@ const path = require( "path" );
 
 //: @server:
 
-describe( "xcavate", ( ) => {
-
-	describe( `"xcavate( "hello", data )"`, ( ) => {
-
-		describe( `"xcavate( Symbol( "hello" ), data "`, ( ) => {
-			let symbol = Symbol( "hello" );
-			let data = { };
-			data[ symbol ] = symbol;
-
-			it( "should be equal to Symbol( 'hello' )", ( ) => {
-
-			assert.equal( xcavate( "hello", data ), symbol);
-
-			} );
-			it( "should be equal to Symbol( 'hello' )", ( ) => {
-
-			assert.equal( xcavate( Symbol( "hello" ), data ), symbol );
-
-			} );
-		} );
-	} );
-} );
 
 
 //: @end-server
@@ -100,28 +78,7 @@ describe( "xcavate", ( ) => {
 
 //: @client:
 
-describe( "xcavate", ( ) => {
 
-	describe( `"xcavate( "hello", data )"`, ( ) => {
-
-		describe( `"xcavate( Symbol( "hello" ), data "`, ( ) => {
-			let symbol = Symbol( "hello" );
-			let data = { };
-			data[ symbol ] = symbol;
-
-			it( "should be equal to Symbol( 'hello' )", ( ) => {
-
-			assert.equal( xcavate( "hello", data ), symbol);
-
-			} );
-			it( "should be equal to Symbol( 'hello' )", ( ) => {
-
-			assert.equal( xcavate( Symbol( "hello" ), data ), symbol );
-
-			} );
-		} );
-	} );
-} );
 
 //: @end-client
 
@@ -132,8 +89,7 @@ describe( "xcavate", ( ) => {
 
 	let bridgeURL = `file://${ path.resolve( __dirname, "bridge.html" ) }`;
 
-	describe( `"xcavate( 'hello', { } )"`, ( ) => {
-
+	describe( "`xcavate( 'hello', { } )`", ( ) => {
 		it( "should be equal to Symbol( 'hello' )", ( ) => {
 			//: @ignore:
 			let result = browser.url( bridgeURL ).execute(
@@ -151,29 +107,6 @@ describe( "xcavate", ( ) => {
 			assert.equal( result, "Symbol(hello)" );
 
 		} );
-
-	} );
-
-
-	describe( `"xcavate( Symbol( 'hello' ), data )"`, ( ) => {
-
-		it( "should be equal to Symbol( 'hello' )", ( ) => {
-			//: @ignore:
-			let result = browser.url( bridgeURL ).execute(
-
-				function( ){
-					let symbol = Symbol( "hello" );
-					let data = { };
-					data[ symbol ] = symbol;
-					return xcavate( Symbol( "hello" ), data ).toString( );
-				}
-
-			).value;
-			//: @end-ignore
-			assert.equal( result, "Symbol(hello)" );
-
-		} );
-
 	} );
 
 } );
