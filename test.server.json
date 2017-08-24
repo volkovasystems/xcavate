@@ -1,46 +1,46 @@
 {
-  "stats": {
-    "suites": 3,
-    "tests": 2,
-    "passes": 2,
-    "pending": 0,
-    "failures": 0,
-    "start": "2017-08-18T02:41:50.284Z",
-    "end": "2017-08-18T02:41:50.291Z",
-    "duration": 7
-  },
-  "tests": [
-    {
-      "title": "should be equal to Symbol( 'hello' )",
-      "fullTitle": "xcavate \"xcavate( \"hello\", data )\" \"xcavate( Symbol( \"hello\" ), data \" should be equal to Symbol( 'hello' )",
-      "duration": 1,
-      "currentRetry": 0,
-      "err": {}
-    },
-    {
-      "title": "should be equal to Symbol( 'hello' )",
-      "fullTitle": "xcavate \"xcavate( \"hello\", data )\" \"xcavate( Symbol( \"hello\" ), data \" should be equal to Symbol( 'hello' )",
-      "duration": 0,
-      "currentRetry": 0,
-      "err": {}
-    }
-  ],
-  "pending": [],
-  "failures": [],
-  "passes": [
-    {
-      "title": "should be equal to Symbol( 'hello' )",
-      "fullTitle": "xcavate \"xcavate( \"hello\", data )\" \"xcavate( Symbol( \"hello\" ), data \" should be equal to Symbol( 'hello' )",
-      "duration": 1,
-      "currentRetry": 0,
-      "err": {}
-    },
-    {
-      "title": "should be equal to Symbol( 'hello' )",
-      "fullTitle": "xcavate \"xcavate( \"hello\", data )\" \"xcavate( Symbol( \"hello\" ), data \" should be equal to Symbol( 'hello' )",
-      "duration": 0,
-      "currentRetry": 0,
-      "err": {}
-    }
-  ]
+	"stats": {
+		"suites": 3,
+		"tests": 2,
+		"passes": 2,
+		"pending": 0,
+		"failures": 0,
+		"start": "2017-08-24T07:20:24.085Z",
+		"end": "2017-08-24T07:20:24.091Z",
+		"duration": 6
+	},
+	"tests": [
+		{
+			"title": "should be equal to Symbol( 'hello' )",
+			"fullTitle": "xcavate `xcavate( 'hello', { [ Symbol( 'hello' ) ]: Symbol( 'hello' ) } )` should be equal to Symbol( 'hello' )",
+			"duration": 2,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should be equal to Symbol( 'hello' )",
+			"fullTitle": "xcavate `xcavate( Symbol( 'hello' ), { [ Symbol( 'hello' ) ]: Symbol( 'hello' ) } )` should be equal to Symbol( 'hello' )",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		}
+	],
+	"pending": [],
+	"failures": [],
+	"passes": [
+		{
+			"title": "should be equal to Symbol( 'hello' )",
+			"fullTitle": "xcavate `xcavate( 'hello', { [ Symbol( 'hello' ) ]: Symbol( 'hello' ) } )` should be equal to Symbol( 'hello' )",
+			"duration": 2,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should be equal to Symbol( 'hello' )",
+			"fullTitle": "xcavate `xcavate( Symbol( 'hello' ), { [ Symbol( 'hello' ) ]: Symbol( 'hello' ) } )` should be equal to Symbol( 'hello' )",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		}
+	]
 }

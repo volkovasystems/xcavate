@@ -69,27 +69,31 @@ const xcavate = require( "./xcavate.js" );
 
 describe( "xcavate", ( ) => {
 
-	describe( `"xcavate( "hello", data )"`, ( ) => {
+	describe( "`xcavate( 'hello', { [ Symbol( 'hello' ) ]: Symbol( 'hello' ) } )`", ( ) => {
+		it( "should be equal to Symbol( 'hello' )", ( ) => {
 
-		describe( `"xcavate( Symbol( "hello" ), data "`, ( ) => {
 			let symbol = Symbol( "hello" );
 			let data = { };
 			data[ symbol ] = symbol;
 
-			it( "should be equal to Symbol( 'hello' )", ( ) => {
+			assert.equal( xcavate( "hello", data ), symbol );
 
-			assert.equal( xcavate( "hello", data ), symbol);
+		} );
+	} );
 
-			} );
-			it( "should be equal to Symbol( 'hello' )", ( ) => {
+	describe( "`xcavate( Symbol( 'hello' ), { [ Symbol( 'hello' ) ]: Symbol( 'hello' ) } )`", ( ) => {
+		it( "should be equal to Symbol( 'hello' )", ( ) => {
+
+			let symbol = Symbol( "hello" );
+			let data = { };
+			data[ symbol ] = symbol;
 
 			assert.equal( xcavate( Symbol( "hello" ), data ), symbol );
 
-			} );
 		} );
 	} );
-} );
 
+} );
 
 //: @end-server
 

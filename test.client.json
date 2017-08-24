@@ -1,0 +1,116 @@
+{
+	"state": {
+		"passed": 2,
+		"failed": 0,
+		"skipped": 0
+	},
+	"start": "2017-08-24T07:20:25.447Z",
+	"end": "2017-08-24T07:20:59.512Z",
+	"capabilities": {
+		"browserName": "chrome",
+		"chromeOptions": {
+			"args": [
+				"disable-gpu",
+				"headless"
+			]
+		},
+		"proxy": null
+	},
+	"host": "127.0.0.1",
+	"port": 4444,
+	"baseUrl": "http://localhost",
+	"framework": "mocha",
+	"mochaOpts": {
+		"timeout": 10000,
+		"ui": "bdd"
+	},
+	"suites": [
+		{
+			"name": "xcavate",
+			"duration": 0,
+			"start": "2017-08-24T07:20:59.200Z",
+			"tests": [],
+			"hooks": []
+		},
+		{
+			"name": "xcavate",
+			"duration": 137,
+			"start": "2017-08-24T07:20:59.200Z",
+			"end": "2017-08-24T07:20:59.337Z",
+			"tests": [],
+			"hooks": [
+				{
+					"start": "2017-08-24T07:20:59.202Z",
+					"end": "2017-08-24T07:20:59.203Z",
+					"duration": 1,
+					"title": "\"before each\" hook",
+					"associatedSuite": "xcavate",
+					"associatedTest": "should be equal to Symbol( 'hello' )"
+				},
+				{
+					"start": "2017-08-24T07:20:59.299Z",
+					"end": "2017-08-24T07:20:59.299Z",
+					"duration": 0,
+					"title": "\"after each\" hook",
+					"associatedSuite": "xcavate",
+					"associatedTest": "should be equal to Symbol( 'hello' )"
+				},
+				{
+					"start": "2017-08-24T07:20:59.300Z",
+					"end": "2017-08-24T07:20:59.300Z",
+					"duration": 0,
+					"title": "\"before each\" hook",
+					"associatedSuite": "xcavate",
+					"associatedTest": "should be equal to Symbol( 'hello' )"
+				},
+				{
+					"start": "2017-08-24T07:20:59.337Z",
+					"end": "2017-08-24T07:20:59.337Z",
+					"duration": 0,
+					"title": "\"after each\" hook",
+					"associatedSuite": "xcavate",
+					"associatedTest": "should be equal to Symbol( 'hello' )"
+				},
+				{
+					"start": "2017-08-24T07:20:59.337Z",
+					"end": "2017-08-24T07:20:59.338Z",
+					"duration": 1,
+					"title": "\"after all\" hook",
+					"associatedSuite": "xcavate"
+				}
+			]
+		},
+		{
+			"name": "`xcavate( 'hello', { [ Symbol( 'hello' ) ]: Symbol( 'hello' ) } )`",
+			"duration": 98,
+			"start": "2017-08-24T07:20:59.201Z",
+			"end": "2017-08-24T07:20:59.299Z",
+			"tests": [
+				{
+					"name": "should be equal to Symbol( 'hello' )",
+					"start": "2017-08-24T07:20:59.202Z",
+					"end": "2017-08-24T07:20:59.298Z",
+					"duration": 96,
+					"state": "pass"
+				}
+			],
+			"hooks": []
+		},
+		{
+			"name": "`xcavate( Symbol( 'hello' ), { [ Symbol( 'hello' ) ]: Symbol( 'hello' ) } )`",
+			"duration": 38,
+			"start": "2017-08-24T07:20:59.299Z",
+			"end": "2017-08-24T07:20:59.337Z",
+			"tests": [
+				{
+					"name": "should be equal to Symbol( 'hello' )",
+					"start": "2017-08-24T07:20:59.299Z",
+					"end": "2017-08-24T07:20:59.337Z",
+					"duration": 38,
+					"state": "pass"
+				}
+			],
+			"hooks": []
+		}
+	]
+}
