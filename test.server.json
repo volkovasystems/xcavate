@@ -1,12 +1,12 @@
 {
 	"stats": {
-		"suites": 3,
-		"tests": 2,
-		"passes": 2,
+		"suites": 4,
+		"tests": 3,
+		"passes": 3,
 		"pending": 0,
 		"failures": 0,
-		"start": "2017-08-24T07:20:24.085Z",
-		"end": "2017-08-24T07:20:24.091Z",
+		"start": "2017-09-15T07:03:50.322Z",
+		"end": "2017-09-15T07:03:50.328Z",
 		"duration": 6
 	},
 	"tests": [
@@ -20,6 +20,13 @@
 		{
 			"title": "should be equal to Symbol( 'hello' )",
 			"fullTitle": "xcavate `xcavate( Symbol( 'hello' ), { [ Symbol( 'hello' ) ]: Symbol( 'hello' ) } )` should be equal to Symbol( 'hello' )",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should be equal to Symbol.for( 'extensive' )",
+			"fullTitle": "xcavate `xcavate with symbol type as symbol parameter and function as entity` should be equal to Symbol.for( 'extensive' )",
 			"duration": 0,
 			"currentRetry": 0,
 			"err": {}
@@ -38,6 +45,13 @@
 		{
 			"title": "should be equal to Symbol( 'hello' )",
 			"fullTitle": "xcavate `xcavate( Symbol( 'hello' ), { [ Symbol( 'hello' ) ]: Symbol( 'hello' ) } )` should be equal to Symbol( 'hello' )",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should be equal to Symbol.for( 'extensive' )",
+			"fullTitle": "xcavate `xcavate with symbol type as symbol parameter and function as entity` should be equal to Symbol.for( 'extensive' )",
 			"duration": 0,
 			"currentRetry": 0,
 			"err": {}

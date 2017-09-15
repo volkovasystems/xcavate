@@ -49,13 +49,13 @@
 
 	@include:
 		{
-			"assert": "should",
+			"assert": "should/as-function",
 			"xcavate": "xcavate"
 		}
 	@end-include
 */
 
-const assert = require( "should" );
+const assert = require( "should/as-function" );
 
 //: @server:
 const xcavate = require( "./xcavate.js" );
@@ -89,6 +89,16 @@ describe( "xcavate", ( ) => {
 			data[ symbol ] = symbol;
 
 			assert.equal( xcavate( Symbol( "hello" ), data ), symbol );
+
+		} );
+	} );
+
+	describe( "`xcavate with symbol type as symbol parameter and function as entity`", ( ) => {
+		it( "should be equal to Symbol.for( 'extensive' )", ( ) => {
+			let Hello = function Hello( ){ };
+			Hello[ Symbol.for( "extensive" ) ] = Symbol.for( "extensive" );
+
+			assert.equal( xcavate( Symbol.for( "extensive" ), Hello ), Symbol.for( "extensive" ) );
 
 		} );
 	} );

@@ -1,11 +1,11 @@
 {
 	"state": {
-		"passed": 2,
+		"passed": 3,
 		"failed": 0,
 		"skipped": 0
 	},
-	"start": "2017-08-24T07:20:25.447Z",
-	"end": "2017-08-24T07:20:59.512Z",
+	"start": "2017-09-15T07:03:51.480Z",
+	"end": "2017-09-15T07:04:25.799Z",
 	"capabilities": {
 		"browserName": "chrome",
 		"chromeOptions": {
@@ -28,53 +28,69 @@
 		{
 			"name": "xcavate",
 			"duration": 0,
-			"start": "2017-08-24T07:20:59.200Z",
+			"start": "2017-09-15T07:04:25.436Z",
 			"tests": [],
 			"hooks": []
 		},
 		{
 			"name": "xcavate",
-			"duration": 137,
-			"start": "2017-08-24T07:20:59.200Z",
-			"end": "2017-08-24T07:20:59.337Z",
+			"duration": 186,
+			"start": "2017-09-15T07:04:25.436Z",
+			"end": "2017-09-15T07:04:25.622Z",
 			"tests": [],
 			"hooks": [
 				{
-					"start": "2017-08-24T07:20:59.202Z",
-					"end": "2017-08-24T07:20:59.203Z",
-					"duration": 1,
-					"title": "\"before each\" hook",
-					"associatedSuite": "xcavate",
-					"associatedTest": "should be equal to Symbol( 'hello' )"
-				},
-				{
-					"start": "2017-08-24T07:20:59.299Z",
-					"end": "2017-08-24T07:20:59.299Z",
-					"duration": 0,
-					"title": "\"after each\" hook",
-					"associatedSuite": "xcavate",
-					"associatedTest": "should be equal to Symbol( 'hello' )"
-				},
-				{
-					"start": "2017-08-24T07:20:59.300Z",
-					"end": "2017-08-24T07:20:59.300Z",
+					"start": "2017-09-15T07:04:25.439Z",
+					"end": "2017-09-15T07:04:25.439Z",
 					"duration": 0,
 					"title": "\"before each\" hook",
 					"associatedSuite": "xcavate",
 					"associatedTest": "should be equal to Symbol( 'hello' )"
 				},
 				{
-					"start": "2017-08-24T07:20:59.337Z",
-					"end": "2017-08-24T07:20:59.337Z",
-					"duration": 0,
+					"start": "2017-09-15T07:04:25.529Z",
+					"end": "2017-09-15T07:04:25.530Z",
+					"duration": 1,
 					"title": "\"after each\" hook",
 					"associatedSuite": "xcavate",
 					"associatedTest": "should be equal to Symbol( 'hello' )"
 				},
 				{
-					"start": "2017-08-24T07:20:59.337Z",
-					"end": "2017-08-24T07:20:59.338Z",
+					"start": "2017-09-15T07:04:25.530Z",
+					"end": "2017-09-15T07:04:25.531Z",
 					"duration": 1,
+					"title": "\"before each\" hook",
+					"associatedSuite": "xcavate",
+					"associatedTest": "should be equal to Symbol( 'hello' )"
+				},
+				{
+					"start": "2017-09-15T07:04:25.577Z",
+					"end": "2017-09-15T07:04:25.578Z",
+					"duration": 1,
+					"title": "\"after each\" hook",
+					"associatedSuite": "xcavate",
+					"associatedTest": "should be equal to Symbol( 'hello' )"
+				},
+				{
+					"start": "2017-09-15T07:04:25.578Z",
+					"end": "2017-09-15T07:04:25.578Z",
+					"duration": 0,
+					"title": "\"before each\" hook",
+					"associatedSuite": "xcavate",
+					"associatedTest": "should be equal to Symbol.for( 'extensive' )"
+				},
+				{
+					"start": "2017-09-15T07:04:25.621Z",
+					"end": "2017-09-15T07:04:25.621Z",
+					"duration": 0,
+					"title": "\"after each\" hook",
+					"associatedSuite": "xcavate",
+					"associatedTest": "should be equal to Symbol.for( 'extensive' )"
+				},
+				{
+					"start": "2017-09-15T07:04:25.622Z",
+					"end": "2017-09-15T07:04:25.622Z",
+					"duration": 0,
 					"title": "\"after all\" hook",
 					"associatedSuite": "xcavate"
 				}
@@ -82,15 +98,15 @@
 		},
 		{
 			"name": "`xcavate( 'hello', { [ Symbol( 'hello' ) ]: Symbol( 'hello' ) } )`",
-			"duration": 98,
-			"start": "2017-08-24T07:20:59.201Z",
-			"end": "2017-08-24T07:20:59.299Z",
+			"duration": 93,
+			"start": "2017-09-15T07:04:25.437Z",
+			"end": "2017-09-15T07:04:25.530Z",
 			"tests": [
 				{
 					"name": "should be equal to Symbol( 'hello' )",
-					"start": "2017-08-24T07:20:59.202Z",
-					"end": "2017-08-24T07:20:59.298Z",
-					"duration": 96,
+					"start": "2017-09-15T07:04:25.437Z",
+					"end": "2017-09-15T07:04:25.529Z",
+					"duration": 92,
 					"state": "pass"
 				}
 			],
@@ -98,15 +114,31 @@
 		},
 		{
 			"name": "`xcavate( Symbol( 'hello' ), { [ Symbol( 'hello' ) ]: Symbol( 'hello' ) } )`",
-			"duration": 38,
-			"start": "2017-08-24T07:20:59.299Z",
-			"end": "2017-08-24T07:20:59.337Z",
+			"duration": 48,
+			"start": "2017-09-15T07:04:25.530Z",
+			"end": "2017-09-15T07:04:25.578Z",
 			"tests": [
 				{
 					"name": "should be equal to Symbol( 'hello' )",
-					"start": "2017-08-24T07:20:59.299Z",
-					"end": "2017-08-24T07:20:59.337Z",
-					"duration": 38,
+					"start": "2017-09-15T07:04:25.530Z",
+					"end": "2017-09-15T07:04:25.577Z",
+					"duration": 47,
+					"state": "pass"
+				}
+			],
+			"hooks": []
+		},
+		{
+			"name": "`xcavate with symbol type as symbol parameter and function as entity`",
+			"duration": 44,
+			"start": "2017-09-15T07:04:25.578Z",
+			"end": "2017-09-15T07:04:25.622Z",
+			"tests": [
+				{
+					"name": "should be equal to Symbol.for( 'extensive' )",
+					"start": "2017-09-15T07:04:25.578Z",
+					"end": "2017-09-15T07:04:25.621Z",
+					"duration": 43,
 					"state": "pass"
 				}
 			],
