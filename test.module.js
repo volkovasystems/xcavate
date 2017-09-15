@@ -49,13 +49,13 @@
 
 	@include:
 		{
-			"assert": "should",
+			"assert": "should/as-function",
 			"xcavate": "xcavate"
 		}
 	@end-include
 */
 
-const assert = require( "should" );
+const assert = require( "should/as-function" );
 
 //: @server:
 const xcavate = require( "./xcavate.js" );
@@ -97,6 +97,16 @@ describe( "xcavate", ( ) => {
 		} );
 	} );
 
+	describe( "`xcavate with symbol type as symbol parameter and function as entity`", ( ) => {
+		it( "should be equal to Symbol.for( 'extensive' )", ( ) => {
+			let Hello = function Hello( ){ };
+			Hello[ Symbol.for( "extensive" ) ] = Symbol.for( "extensive" );
+
+			assert.equal( xcavate( Symbol.for( "extensive" ), Hello ), Symbol.for( "extensive" ) );
+
+		} );
+	} );
+
 } );
 
 //: @end-server
@@ -130,8 +140,17 @@ describe( "xcavate", ( ) => {
 		} );
 	} );
 
-} );
+	describe( "`xcavate with symbol type as symbol parameter and function as entity`", ( ) => {
+		it( "should be equal to Symbol.for( 'extensive' )", ( ) => {
+			let Hello = function Hello( ){ };
+			Hello[ Symbol.for( "extensive" ) ] = Symbol.for( "extensive" );
 
+			assert.equal( xcavate( Symbol.for( "extensive" ), Hello ), Symbol.for( "extensive" ) );
+
+		} );
+	} );
+
+} );
 
 //: @end-client
 
@@ -178,6 +197,26 @@ describe( "xcavate", ( ) => {
 			//: @end-ignore
 
 			assert.equal( result, "Symbol(hello)" );
+
+		} );
+	} );
+
+	describe( "`xcavate with symbol type as symbol parameter and function as entity`", ( ) => {
+		it( "should be equal to Symbol.for( 'extensive' )", ( ) => {
+			//: @ignore:
+			let result = browser.url( bridgeURL ).execute(
+
+				function( ){
+					let Hello = function Hello( ){ };
+					Hello[ Symbol.for( "extensive" ) ] = Symbol.for( "extensive" );
+
+					return xcavate( Symbol.for( "extensive" ), Hello ).toString( );
+				}
+
+			).value;
+			//: @end-ignore
+
+			assert.equal( result, "Symbol(extensive)" );
 
 		} );
 	} );
