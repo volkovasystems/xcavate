@@ -71,7 +71,6 @@ describe( "xcavate", ( ) => {
 
 	describe( "`xcavate( 'hello', { [ Symbol( 'hello' ) ]: Symbol( 'hello' ) } )`", ( ) => {
 		it( "should be equal to Symbol( 'hello' )", ( ) => {
-
 			let symbol = Symbol( "hello" );
 			let data = { };
 			data[ symbol ] = symbol;
@@ -81,14 +80,34 @@ describe( "xcavate", ( ) => {
 		} );
 	} );
 
+	describe( "`xcavate( 1, { [ Symbol( 1 ) ]: Symbol( 1 ) } )`", ( ) => {
+		it( "should be equal to Symbol( 1 )", ( ) => {
+			let symbol = Symbol( 1 );
+			let data = { };
+			data[ symbol ] = symbol;
+
+			assert.equal( xcavate( 1, data ), symbol );
+
+		} );
+	} );
+
 	describe( "`xcavate( Symbol( 'hello' ), { [ Symbol( 'hello' ) ]: Symbol( 'hello' ) } )`", ( ) => {
 		it( "should be equal to Symbol( 'hello' )", ( ) => {
-
 			let symbol = Symbol( "hello" );
 			let data = { };
 			data[ symbol ] = symbol;
 
 			assert.equal( xcavate( Symbol( "hello" ), data ), symbol );
+
+		} );
+	} );
+
+	describe( "`xcavate with string type as symbol parameter and function as entity`", ( ) => {
+		it( "should be equal to Symbol.for( 'extensive' )", ( ) => {
+			let Hello = function Hello( ){ };
+			Hello[ Symbol.for( "extensive" ) ] = Symbol.for( "extensive" );
+
+			assert.equal( xcavate( "extensive", Hello ), Symbol.for( "extensive" ) );
 
 		} );
 	} );
