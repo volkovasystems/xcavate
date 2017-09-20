@@ -75,7 +75,6 @@ describe( "xcavate", ( ) => {
 
 	describe( "`xcavate( 'hello', { [ Symbol( 'hello' ) ]: Symbol( 'hello' ) } )`", ( ) => {
 		it( "should be equal to Symbol( 'hello' )", ( ) => {
-
 			let symbol = Symbol( "hello" );
 			let data = { };
 			data[ symbol ] = symbol;
@@ -85,14 +84,34 @@ describe( "xcavate", ( ) => {
 		} );
 	} );
 
+	describe( "`xcavate( 1, { [ Symbol( 1 ) ]: Symbol( 1 ) } )`", ( ) => {
+		it( "should be equal to Symbol( 1 )", ( ) => {
+			let symbol = Symbol( 1 );
+			let data = { };
+			data[ symbol ] = symbol;
+
+			assert.equal( xcavate( 1, data ), symbol );
+
+		} );
+	} );
+
 	describe( "`xcavate( Symbol( 'hello' ), { [ Symbol( 'hello' ) ]: Symbol( 'hello' ) } )`", ( ) => {
 		it( "should be equal to Symbol( 'hello' )", ( ) => {
-
 			let symbol = Symbol( "hello" );
 			let data = { };
 			data[ symbol ] = symbol;
 
 			assert.equal( xcavate( Symbol( "hello" ), data ), symbol );
+
+		} );
+	} );
+
+	describe( "`xcavate with string type as symbol parameter and function as entity`", ( ) => {
+		it( "should be equal to Symbol.for( 'extensive' )", ( ) => {
+			let Hello = function Hello( ){ };
+			Hello[ Symbol.for( "extensive" ) ] = Symbol.for( "extensive" );
+
+			assert.equal( xcavate( "extensive", Hello ), Symbol.for( "extensive" ) );
 
 		} );
 	} );
@@ -118,7 +137,6 @@ describe( "xcavate", ( ) => {
 
 	describe( "`xcavate( 'hello', { [ Symbol( 'hello' ) ]: Symbol( 'hello' ) } )`", ( ) => {
 		it( "should be equal to Symbol( 'hello' )", ( ) => {
-
 			let symbol = Symbol( "hello" );
 			let data = { };
 			data[ symbol ] = symbol;
@@ -128,14 +146,34 @@ describe( "xcavate", ( ) => {
 		} );
 	} );
 
+	describe( "`xcavate( 1, { [ Symbol( 1 ) ]: Symbol( 1 ) } )`", ( ) => {
+		it( "should be equal to Symbol( 1 )", ( ) => {
+			let symbol = Symbol( 1 );
+			let data = { };
+			data[ symbol ] = symbol;
+
+			assert.equal( xcavate( 1, data ), symbol );
+
+		} );
+	} );
+
 	describe( "`xcavate( Symbol( 'hello' ), { [ Symbol( 'hello' ) ]: Symbol( 'hello' ) } )`", ( ) => {
 		it( "should be equal to Symbol( 'hello' )", ( ) => {
-
 			let symbol = Symbol( "hello" );
 			let data = { };
 			data[ symbol ] = symbol;
 
 			assert.equal( xcavate( Symbol( "hello" ), data ), symbol );
+
+		} );
+	} );
+
+	describe( "`xcavate with string type as symbol parameter and function as entity`", ( ) => {
+		it( "should be equal to Symbol.for( 'extensive' )", ( ) => {
+			let Hello = function Hello( ){ };
+			Hello[ Symbol.for( "extensive" ) ] = Symbol.for( "extensive" );
+
+			assert.equal( xcavate( "extensive", Hello ), Symbol.for( "extensive" ) );
 
 		} );
 	} );
@@ -181,6 +219,27 @@ describe( "xcavate", ( ) => {
 		} );
 	} );
 
+	describe( "`xcavate( 1, { [ Symbol( 1 ) ]: Symbol( 1 ) } )`", ( ) => {
+		it( "should be equal to Symbol( 1 )", ( ) => {
+			//: @ignore:
+			let result = browser.url( bridgeURL ).execute(
+
+				function( ){
+					let symbol = Symbol( 1 );
+					let data = { };
+					data[ symbol ] = symbol;
+
+					return xcavate( 1, data ).toString( );
+				}
+
+			).value;
+			//: @end-ignore
+
+			assert.equal( result, "Symbol(1)" );
+
+		} );
+	} );
+
 	describe( "`xcavate( Symbol( 'hello' ), { [ Symbol( 'hello' ) ]: Symbol( 'hello' ) } )`", ( ) => {
 		it( "should be equal to Symbol( 'hello' )", ( ) => {
 			//: @ignore:
@@ -190,6 +249,7 @@ describe( "xcavate", ( ) => {
 					let symbol = Symbol( "hello" );
 					let data = { };
 					data[ symbol ] = symbol;
+
 					return xcavate( Symbol( "hello" ), { [ Symbol( "hello" ) ]: Symbol( "hello" ) } ).toString( );
 				}
 
@@ -197,6 +257,26 @@ describe( "xcavate", ( ) => {
 			//: @end-ignore
 
 			assert.equal( result, "Symbol(hello)" );
+
+		} );
+	} );
+
+	describe( "`xcavate with string type as symbol parameter and function as entity`", ( ) => {
+		it( "should be equal to Symbol.for( 'extensive' )", ( ) => {
+			//: @ignore:
+			let result = browser.url( bridgeURL ).execute(
+
+				function( ){
+					let Hello = function Hello( ){ };
+					Hello[ Symbol.for( "extensive" ) ] = Symbol.for( "extensive" );
+
+					return xcavate( "extensive", Hello ).toString( );
+				}
+
+			).value;
+			//: @end-ignore
+
+			assert.equal( result, "Symbol(extensive)" );
 
 		} );
 	} );
